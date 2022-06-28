@@ -1,0 +1,142 @@
+@model IEnumerable<LibrarySystem.Models.LendRequest>
+@using Microsoft.AspNetCore.Http;
+
+@{ ViewData["Title"] = "Index"; }
+
+<head>
+    <title>LMS - Book Requests</title>
+   
+</head>
+<center>
+    <h1>Requests</h1> 
+
+    <p style="font-size:18px;">
+        <span style="float:left; margin-left:10px;">Welcome @Context.Session.GetString("username")</span>
+    </p>
+</center>
+    <table class="table">
+        <thead>
+            <tr style="background-color:white;">
+                <th>
+                    @Html.DisplayNameFor(model => model.LendDate)
+                </th>
+             
+                <th>
+                    @Html.DisplayNameFor(model => model.FineAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReqStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if(item.ReqStatus=="Approved" && item.ReturnDate != null){
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LendDate)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.FineAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReqStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Book.BookTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.Username)
+    </td>
+    <td>
+        <a asp-action="Details" asp-route-id="@item.LendId">Details</a>
+    </td>
+</tr>
+}
+
+else if(item.ReqStatus=="Pending" && item.ReturnDate == null){
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LendDate)
+    </td>
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.FineAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReqStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Book.BookTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.Username)
+    </td>
+    <td>
+        <a asp-action="Details" asp-route-id="@item.LendId">Details</a>
+    </td>
+</tr>
+}
+
+else if(item.ReqStatus=="Rejected"){
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LendDate)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.FineAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReqStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Book.BookTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.Username)
+    </td>
+    <td>
+        <a asp-action="Details" asp-route-id="@item.LendId">Details</a>
+    </td>
+</tr>
+}
+                else if(item.ReqStatus=="Approved" && item.ReturnDate == null){
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LendDate)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.FineAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReqStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Book.BookTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.Username)
+    </td>
+    <td>
+        <a asp-action="Return" asp-route-id="@item.LendId">Return</a> |
+        <a asp-action="Details" asp-route-id="@item.LendId">Details</a>
+    </td>
+</tr>
+}
+}
+                
+        </tbody>
+    </table>
+
+    <p style="background-color: beige; padding-bottom: 30px; padding-top: 5px;"><span style="float:right; margin-right:10px;"><a asp-action="GetBooksInfo">View Catalogue</a></span></p>

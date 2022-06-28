@@ -1,0 +1,48 @@
+@model IEnumerable<LibrarySystem.Models.BooksInfo>
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p style="background-color:ghostwhite; padding-bottom: 30px; padding-top: 5px;"><span style="float:left;margin-left:10px;"><a asp-action="GetAccountInfo">View Accounts</a></span><span style="float:right; margin-right:10px;"><a asp-action="GetRequestInfo">View Requests</a></span></p>
+<head>
+    <title>LMS - Books Catalogue</title>
+   
+</head>
+<form asp-controller="BooksInfoStu" asp-action="index">
+    <div class="input-group mb-3" style="float:right;">
+        <input type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="basic-addon2" name="SearchString">
+        <button type="submit" class="input-group-text" id="basic-addon2">Search</button>
+    </div>
+</form>
+
+<center>
+    <h1>Books Catalogue</h1>
+
+
+    <p style="font-size:18px;">
+        <span style="float:left; margin-left:10px;">Welcome @Context.Session.GetString("username")</span>
+        <a asp-action="Create" style="margin-right:120px;">Add New Entry</a>
+    </p>
+</center>
+
+    <div style="display:grid;grid-template-columns:auto auto auto">
+
+        @foreach(var item in Model)
+        {
+            <div style = "background-color:white;margin:10px">
+                <div style = "padding-bottom:10px"><img style="object-fit:contain;width:80%;height:150px" src="@Html.DisplayFor(modelItem => item.ImageUrl)"/></div>
+                <div style="padding-left:10px;padding-bottom:10px">
+                    <div><span>Book Name : </span> <span>@Html.DisplayFor(modelItem => item.BookTitle)</span></div>
+                    <div><span>Author : </span> <span>@Html.DisplayFor(modelItem => item.Author)</span></div>
+                    <div><span>Category : </span> <span>@Html.DisplayFor(modelItem => item.Genre)</span></div>
+                    <div><span>Number of copies Available : </span> <span>@Html.DisplayFor(modelItem => item.NumberofCopies)</span></div>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+                </div>
+             </div>
+        }
+</div>
