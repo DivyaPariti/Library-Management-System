@@ -1,10 +1,10 @@
-#📖 Library-Management-System
+# 📖 Library-Management-System
 
 
 This is a Library Management System project built using ASP.NET CORE and MVC Concept. 
 
 
-#📝 Required Tools:
+# 📝 Required Tools:
 
 In order to get this project up and running 
 - Firstly, download the Zip folder and unzip it into your local system.
@@ -36,7 +36,7 @@ In order to get this project up and running
 
       
 
-#🚀 Steps to run the code
+# 🚀 Steps to run the code
 
 - After installing the above packages run migrations(adding migrations adds the tables to your database automatically, it removes the need to add, update, delete, and manage the database tables manually.)
        - Commands: 
@@ -48,7 +48,7 @@ In order to get this project up and running
               
 
 
-#📸 Snippets of the output screen:
+# 📸 Snippets of the output screen:
 
         
      User Display Screen:
