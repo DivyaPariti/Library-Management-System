@@ -1,6 +1,6 @@
 # Library-Management-System
 
-# LMS-Razor
+
 This is a Library Management System project built using ASP.NET CORE and Razor Pages Concept. 
 
 In order to get this project up and running 
