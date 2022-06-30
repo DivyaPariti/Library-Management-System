@@ -1,7 +1,7 @@
 # Library-Management-System
 
 
-This is a Library Management System project built using ASP.NET CORE and Razor Pages Concept. 
+This is a Library Management System project built using ASP.NET CORE and MVC Concept. 
 
 In order to get this project up and running 
 - Firstly, download the Zip folder and unzip it into your local system.
