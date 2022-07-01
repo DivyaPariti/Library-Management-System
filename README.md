@@ -1,8 +1,7 @@
 # 📖 Library-Management-System
 
-
 This is a Library Management System project built using ASP.NET CORE and MVC Concept. 
-
+This is a Capstone Project built during the training phase on "Great Learning" platform.
 
 # 📝 Required Tools:
 
