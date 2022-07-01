@@ -2,7 +2,7 @@
 
 Library Management System project built using ASP.NET CORE and MVC Concept. 
 
-This is a Capstone Project built during the training phase on "Great Learning" platform.
+This is a Capstone Project built during the training phase on "Great Learning" platform. In this project you can find the basic appplications of Online Library Portal, that allows User Login & Admin Login, 
 
 # 📝 Required Tools:
 
