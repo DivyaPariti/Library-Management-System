@@ -81,7 +81,7 @@ In order to get this project up and running
      
 ![CP-8](https://user-images.githubusercontent.com/65856784/176759128-92df2095-105c-4627-927e-6943dcb0d3d0.png)
 
-     Returnimg the book and calculating the Fine Amount:
+     Returning the book and calculating the Fine Amount:
      
 ![CP-9](https://user-images.githubusercontent.com/65856784/176759132-0242c8b6-2093-4832-8c7d-9af7deed164f.png)
 
